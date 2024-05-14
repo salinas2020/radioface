@@ -30,6 +30,13 @@
             border: none; /* Remove a borda */
         }
     </style>
+
+    <!-- Script para abrir o chat -->
+    <script type="text/javascript">
+        function abrir_chat(url, largura, altura) {
+            window.open(url, "", "width=" + largura + ",height=" + altura + ",toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=NO");
+        }
+    </script>
 </head>
 
 <body>
@@ -40,14 +47,8 @@
     <!-- Player de Rádio incorporado com iframe -->
     <iframe src="https://player.srvsh.com.br/player-topo-html5/8682/4c7cf3" frameborder="0" width="100%" height="65"></iframe>
 
-    <!-- Script do chat -->
-    <script>
-        window.onload = function () {
-            var chatScript = document.createElement('script');
-            chatScript.src = 'https://player.srvsh.com.br/chat/8682';
-            document.body.appendChild(chatScript);
-        };
-    </script>
+    <!-- Widget do chat -->
+    <a href="javascript:abrir_chat('http://player.srvsh.com.br/chat/8682','750','465');">Chat</a>
 </body>
 
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player de Web Rádio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .popup-container {
+      width: 500px;
+      height: 320px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+    .popup-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .popup-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup-container" id="popup">
+  <span class="popup-close" onclick="closePopup()">X</span>
+  <iframe src="http://player.srvsh.com.br/player-popup-responsivo/8682/10" frameborder="0" width="500" height="290"></iframe>
+</div>
+
+<script>
+  function openPopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+  }
+
+  function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+  }
+
+  // Open the popup when the page loads (you can remove this line if you don't want the popup to open automatically)
+  window.onload = function() {
+    openPopup();
+  };
+</script>
+
+</body>
+</html>

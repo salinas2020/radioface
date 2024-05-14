@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Player de Web Rádio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RÁDIO MSB</title>
+    <style>
+        /* Estilo básico para a página */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        /* Estilo para a imagem da logomarca */
+        .logo {
+            width: 100%; /* Largura ajustada para 100% da tela */
+            height: auto; /* Altura automática para manter a proporção da imagem */
+            margin: 0 auto 10px; /* Centraliza a logomarca e adiciona um espaço abaixo dela */
+            display: block; /* Garante que a imagem ocupe o espaço total disponível */
+        }
+
+        /* Estilo para o iframe */
+        iframe {
+            width: 100%; /* Largura ajustada para 100% da tela */
+            height: 65px; /* Altura definida para 65 pixels */
+            border: none; /* Remove a borda */
+        }
+    </style>
 </head>
+
 <body>
+    <h1>RÁDIO MSB</h1>
+    <!-- Imagem da logomarca da rádio -->
+    <img src="https://i.postimg.cc/yxk07H7n/msb-sem-fundo.png" alt="Logomarca da Rádio" class="logo">
 
-<script>
-  function openPopup(url, width, height) {
-    var left = (screen.width - width) / 2;
-    var top = (screen.height - height) / 2;
-    window.open(url, 'PlayerPopup', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-  }
-</script>
+    <!-- Player de Rádio incorporado com iframe -->
+    <iframe src="https://player.srvsh.com.br/player-topo-html5/8682/4c7cf3" frameborder="0" width="100%" height="65"></iframe>
 
-<button onclick="openPopup('http://player.srvsh.com.br/player-popup-responsivo/8682/10', 500, 320)">Abrir Player de Web Rádio</button>
-
+    <!-- Script do chat -->
+    <script>
+        window.onload = function () {
+            var chatScript = document.createElement('script');
+            chatScript.src = 'https://player.srvsh.com.br/chat/8682';
+            document.body.appendChild(chatScript);
+        };
+    </script>
 </body>
+
 </html>
